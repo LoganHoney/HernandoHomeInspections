@@ -129,7 +129,7 @@ p {
   font-size: 16px;
   height: 55px;
   line-height: 55px;
-  border-radius: 0;
+  border-radius: 15px;
   color: #fff;
   cursor: pointer;
   z-index: 5;
