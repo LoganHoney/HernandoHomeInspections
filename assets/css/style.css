@@ -118,13 +118,14 @@ p {
   font-weight: 500;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
+  vertical-align:center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   border: 0;
   padding: 0 40px;
+  place-items: center;
   font-size: 16px;
   height: 55px;
   line-height: 55px;
@@ -139,7 +140,7 @@ p {
   transition: all 0.4s ease-out 0s;
   background-color: #E84E4E; }
   .main-btn:hover {
-    background-color: #ff6b6b;
+    background-color: #ff6b6c;
     color: #fff; }
 
 /*===== All Section Title Style =====*/
