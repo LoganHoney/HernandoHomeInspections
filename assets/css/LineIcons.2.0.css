@@ -1526,6 +1526,9 @@ Author: lineicons.com
   content: "\eb58";
 }
 
+.lni-pipe ::before {
+  content: "\e9cb";
+}
 .lni-pizza::before {
   content: "\eb59";
 }
