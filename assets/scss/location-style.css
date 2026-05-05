@@ -1,0 +1,480 @@
+/* ═══════════════════════════════════════════════════════
+   HERNANDO HOME INSPECTIONS — Location Page Styles
+   Shared across all /locations/ pages.
+   Requires hernando-style.css to be loaded first.
+═══════════════════════════════════════════════════════ */
+
+/* ── PAGE HERO ── */
+.page-hero {
+  min-height: 62vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #0e0e0e;
+  margin-top: 72px;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14,14,14,0.96) 0%,
+    rgba(14,14,14,0.60) 50%,
+    rgba(14,14,14,0.20) 100%
+  );
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 48px;
+  width: 100%;
+}
+
+.page-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E84E4E;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #E84E4E;
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.page-title em {
+  font-style: italic;
+  color: #E84E4E;
+}
+
+.page-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.60);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.page-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: #ffffff;
+  padding: 16px 36px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.30);
+  border-radius: 2px;
+  display: inline-block;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-outline-light:hover {
+  border-color: rgba(255,255,255,0.70);
+  background: rgba(255,255,255,0.05);
+}
+
+/* ── BREADCRUMB + TRUST BAR ── */
+.trust-bar {
+  background: #f8f5f0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 14px 48px;
+}
+
+.trust-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #b0b0b0;
+}
+
+.breadcrumb-nav a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-nav a:hover { color: #E84E4E; }
+.breadcrumb-nav span:last-child { color: #2f2f2f; font-weight: 500; }
+
+.trust-badges {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #6b6b6b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trust-badge::first-letter { color: #E84E4E; }
+
+/* ── SERVICES GRID ── */
+.loc-services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 48px;
+}
+
+.loc-services-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.loc-services-desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: #6b6b6b;
+  line-height: 1.8;
+  align-self: end;
+}
+
+.loc-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(0,0,0,0.06);
+}
+
+.loc-service-card {
+  background: #ffffff;
+  padding: 44px 36px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background 0.25s;
+  border: none;
+}
+
+.loc-service-card:hover { background: #0e0e0e; }
+.loc-service-card:hover .loc-service-icon { color: #E84E4E; }
+.loc-service-card:hover .loc-service-title { color: #ffffff; }
+.loc-service-card:hover .loc-service-desc { color: rgba(255,255,255,0.45); }
+.loc-service-card:hover .loc-service-link { color: #E84E4E; }
+
+.loc-service-icon {
+  font-size: 22px;
+  color: #E84E4E;
+  margin-bottom: 20px;
+  display: block;
+  transition: color 0.25s;
+}
+
+.loc-service-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #0e0e0e;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  transition: color 0.25s;
+}
+
+.loc-service-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: #6b6b6b;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  transition: color 0.25s;
+}
+
+.loc-service-link {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E84E4E;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s;
+}
+
+.loc-service-link::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+
+.loc-service-card:hover .loc-service-link::after { transform: translateX(4px); }
+
+/* ── LOCAL AREA SECTION ── */
+.loc-area {
+  background: #f8f5f0;
+}
+
+.loc-area-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.loc-area-body {
+  font-size: 15px;
+  font-weight: 300;
+  color: #6b6b6b;
+  line-height: 1.9;
+}
+
+.loc-area-body p { margin-bottom: 20px; }
+.loc-area-body p:last-child { margin-bottom: 0; }
+
+.loc-area-body strong {
+  color: #0e0e0e;
+  font-weight: 500;
+}
+
+.loc-neighborhoods {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+
+.loc-neighborhood {
+  font-size: 13px;
+  font-weight: 400;
+  color: #2f2f2f;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loc-neighborhood::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #E84E4E;
+  flex-shrink: 0;
+}
+
+/* ── CTA BAND ── */
+.loc-cta {
+  background: #0e0e0e;
+  position: relative;
+  overflow: hidden;
+}
+
+.loc-cta-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+}
+
+.loc-cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+
+.loc-cta-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.loc-cta-title em {
+  font-style: italic;
+  color: #E84E4E;
+}
+
+.loc-cta-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.loc-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+/* ── FOOTER (location pages) ── */
+.loc-footer {
+  background: #0e0e0e;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 48px;
+}
+
+.loc-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.loc-footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+}
+
+.loc-footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.loc-footer-links a {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.loc-footer-links a:hover { color: #E84E4E; }
+
+.loc-footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.loc-footer-socials a {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.loc-footer-socials a:hover { border-color: #E84E4E; color: #E84E4E; }
+
+/* ── BACK TO TOP ── */
+.back-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: #E84E4E;
+  color: #ffffff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 99;
+}
+
+.back-top.visible { opacity: 1; pointer-events: all; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page-hero-content { padding: 48px 24px; }
+  .page-title { font-size: clamp(36px, 8vw, 56px); }
+  .trust-bar { padding: 12px 24px; }
+  .trust-badges { display: none; }
+
+  .loc-services { padding: 64px 24px; }
+  .loc-services-header { grid-template-columns: 1fr; gap: 20px; }
+  .loc-services-grid { grid-template-columns: 1fr; background: none; gap: 1px; }
+
+  .loc-area-inner { grid-template-columns: 1fr; gap: 40px; padding: 64px 24px; }
+  .loc-neighborhoods { grid-template-columns: 1fr; }
+
+  .loc-cta-inner { grid-template-columns: 1fr; padding: 64px 24px; }
+  .loc-cta-actions { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+
+  .loc-footer { padding: 24px; }
+  .loc-footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .loc-footer-links { flex-wrap: wrap; gap: 16px; }
+}
