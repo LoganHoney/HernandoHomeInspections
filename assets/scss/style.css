@@ -117,9 +117,17 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(105deg, rgba(14,14,14,0.82) 0%, rgba(14,14,14,0.45) 60%, rgba(14,14,14,0.20) 100%),
-      url('assets/images/hero.jpg') center/cover no-repeat;
+    background-color: var(--black);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(14,14,14,0.82) 0%, rgba(14,14,14,0.45) 60%, rgba(14,14,14,0.20) 100%);
   }
 
   .hero-content {
@@ -138,6 +146,7 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--red);
+    font-weight: bold;
     margin-bottom: 24px;
     display: flex;
     align-items: center;
@@ -398,10 +407,7 @@
     transition: background 0.25s;
   }
 
-  .why-card:hover { background: var(--black); }
-  .why-card:hover .why-icon { color: var(--red); }
-  .why-card:hover .why-card-title { color: var(--white); }
-  .why-card:hover .why-card-desc { color: rgba(255,255,255,0.5); }
+  
 
   .why-icon {
     font-size: 24px;
@@ -513,12 +519,24 @@
   .service-card:hover .service-link::after { transform: translateX(4px); }
 
   /* ─── LOCATIONS BAND ─── */
-  #locations { max-width: 100%; padding: 0; background: var(--black); }
+  #locations { max-width: 100%; padding: 0; background: var(--black); position: relative; overflow: hidden; }
+
+  .locations-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    pointer-events: none;
+  }
 
   .locations-inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 96px 48px;
+    position: relative;
+    z-index: 1;
   }
 
   .locations-inner .section-label { color: rgba(232,78,78,0.9); }
@@ -533,13 +551,15 @@
   }
 
   .loc-card {
-    background: var(--black);
+    background: rgba(14,14,14,0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     padding: 40px 32px;
     text-decoration: none;
     transition: background 0.25s;
   }
 
-  .loc-card:hover { background: var(--charcoal); }
+  .loc-card:hover { background: rgba(14,14,14,0.75); }
 
   .loc-dot {
     width: 8px;
@@ -860,7 +880,9 @@
 
     section { padding: 80px 24px; }
     .hero-content { padding: 0 24px; padding-top: 72px; }
-    .hero-stats { position: static; margin-top: 60px; gap: 32px; flex-wrap: wrap; }
+    .hero-stats { position: static; margin-top: 48px; gap: 24px; flex-wrap: wrap; }
+    .hero-stat-num { font-size: 28px; }
+    .hero-stat-label { font-size: 10px; }
 
     .about-inner { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
     .about-image-wrap { display: none; }
@@ -910,8 +932,8 @@
 
 /* Service CTA card */
 .service-cta-card {
-  background: var(--black);
-  border-color: var(--black);
+  background: var(--gray);
+  border-color: var(--gray);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -922,7 +944,7 @@
   font-family: var(--serif);
   font-size: 22px;
   font-weight: 300;
-  color: var(--white);
+  color: var(--black);
   line-height: 1.4;
   margin-bottom: 24px;
 }
