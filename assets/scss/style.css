@@ -639,7 +639,6 @@
   }
 
   .contact-detail-value {
-    font-family: var(--serif);
     font-size: 18px;
     font-weight: 400;
     color: var(--black);
