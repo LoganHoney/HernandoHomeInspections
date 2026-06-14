@@ -150,11 +150,12 @@
 
   .hero-eyebrow {
     font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 900;
+    font-size: 11px;
+    font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--red);
+    font-weight: bold;
     margin-bottom: 24px;
     display: flex;
     align-items: center;
@@ -649,7 +650,6 @@
   }
 
   .contact-detail-value {
-    font-family: var(--serif);
     font-size: 18px;
     font-weight: 400;
     color: var(--black);
